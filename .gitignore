@@ -5,3 +5,5 @@ src/zever_local.egg-info/dependency_links.txt
 src/zever_local.egg-info/PKG-INFO
 src/zever_local.egg-info/SOURCES.txt
 src/zever_local.egg-info/top_level.txt
+dist/zever_local-1.0.0-py3-none-any.whl
+dist/zever_local-1.0.0.tar.gz
