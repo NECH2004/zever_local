@@ -4,7 +4,7 @@ from datetime import datetime
 import httpx
 import pytest
 
-from src.zeversolar_local.inverter import (
+from src.zever_local.inverter import (
     Inverter,
     InverterData,
     ZeversolarError,
@@ -33,7 +33,7 @@ async def test_async_connect():
         200, request=httpx.Request("Get", "https://test.t"), content=_byte_content
     )
 
-    with patch("src.zeversolar_local.inverter.httpx.AsyncClient.get") as mock_device_info:
+    with patch("src.zever_local.inverter.httpx.AsyncClient.get") as mock_device_info:
         mock_device_info.return_value = mock_response
 
         await my_inverter.async_connect()
@@ -54,7 +54,7 @@ async def test_async_get_data():
         200, request=httpx.Request("Get", f"https://{url}"), content=_byte_content
     )
 
-    with patch("src.zeversolar_local.inverter.httpx.AsyncClient.get") as mock_device_info:
+    with patch("src.zever_local.inverter.httpx.AsyncClient.get") as mock_device_info:
         mock_device_info.return_value = mock_response
 
         my_inverter_data = await my_inverter.async_get_data()
@@ -74,7 +74,7 @@ async def test_async_get_data_ZeversolarTimeout():
     """Fetch inverter data timouts."""
     url = "test"
     with pytest.raises(ZeversolarTimeout):
-        with patch("src.zeversolar_local.inverter.httpx.AsyncClient.get") as mock_device_info:
+        with patch("src.zever_local.inverter.httpx.AsyncClient.get") as mock_device_info:
             mock_device_info.side_effect = httpx.TimeoutException("Timeout")
 
             my_inverter = Inverter(url)
@@ -91,7 +91,7 @@ async def test_async_connect_ZeversolarTimeout():
     """Connect to inverter data timouts."""
     url = "test"
     with pytest.raises(ZeversolarTimeout):
-        with patch("src.zeversolar_local.inverter.httpx.AsyncClient.get") as mock_device_info:
+        with patch("src.zever_local.inverter.httpx.AsyncClient.get") as mock_device_info:
             mock_device_info.side_effect = httpx.TimeoutException("Timeout")
 
             my_inverter = Inverter(url)
@@ -153,13 +153,13 @@ async def test_Inverter_power_on():
         200, request=httpx.Request("Get", f"https://{url}"), content=_byte_content
     )
 
-    with patch("src.zeversolar_local.inverter.httpx.AsyncClient.get") as mock_device_info:
+    with patch("src.zever_local.inverter.httpx.AsyncClient.get") as mock_device_info:
         mock_device_info.return_value = mock_response
 
         my_inverter = Inverter(url)
         await my_inverter.async_connect()
 
-    with patch("src.zeversolar_local.inverter.httpx.AsyncClient.post") as mock_device_info:
+    with patch("src.zever_local.inverter.httpx.AsyncClient.post") as mock_device_info:
         mock_device_info.return_value = mock_response
 
         my_result = await my_inverter.power_on()
@@ -176,13 +176,13 @@ async def test_Inverter_power_off():
         200, request=httpx.Request("Get", f"https://{url}"), content=_byte_content
     )
 
-    with patch("src.zeversolar_local.inverter.httpx.AsyncClient.get") as mock_device_info:
+    with patch("src.zever_local.inverter.httpx.AsyncClient.get") as mock_device_info:
         mock_device_info.return_value = mock_response
 
         my_inverter = Inverter(url)
         await my_inverter.async_connect()
 
-    with patch("src.zeversolar_local.inverter.httpx.AsyncClient.post") as mock_device_info:
+    with patch("src.zever_local.inverter.httpx.AsyncClient.post") as mock_device_info:
         mock_device_info.return_value = mock_response
 
         my_result = await my_inverter.power_off()
@@ -207,7 +207,7 @@ async def test_Inverter_power_on_ZeversolarTimeout():
     my_inverter = Inverter(url)
 
     with pytest.raises(ZeversolarTimeout):
-        with patch("src.zeversolar_local.inverter.httpx.AsyncClient.post") as mock_device_info:
+        with patch("src.zever_local.inverter.httpx.AsyncClient.post") as mock_device_info:
             mock_device_info.side_effect = httpx.TimeoutException("Timeout")
 
             my_inverter = Inverter(url)
