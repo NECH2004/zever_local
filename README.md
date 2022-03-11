@@ -50,7 +50,7 @@ async def async_get_data():
 [validate-shield]: https://github.com/NECH2004/zever_local/actions/workflows/validate.yml/badge.svg?branch=dev
 [validation]: https://github.com/NECH2004/zever_local/actions/workflows/validate.yml
 
-[license-shield]:https://img.shields.io/github/license/NECH2004/zever_local?style=for-the-badge
+[license-shield]:https://img.shields.io/github/license/nech2004/zever_local?style=for-the-badge
 [maintenance-shield]: https://img.shields.io/badge/maintainer-Christian%20Neumeier%20%40NECH2004?style=for-the-badge
 
 [pypi-shield]: https://img.shields.io/pypi/v/zever_local.svg?style=for-the-badge
