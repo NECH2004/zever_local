@@ -7,7 +7,7 @@
 
 Library for connecting to a Zeversolar inverter over local network. Retrieves the inverter data.
 
-Only tested on a Zeversolution 2000.
+Only tested on a Zeversolar 2000.
 ## Usage
 
 1. Install this package `pip install zeversolar_local`
