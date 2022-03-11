@@ -1,3 +1,4 @@
 .coverage
-src/zever_local.egg-info/*
-dist/*
+src/zever_local.egg-info/
+dist/
+__pycache__/
