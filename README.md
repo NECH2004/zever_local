@@ -1,8 +1,5 @@
 # Zeversolar local
 
-[![PyPi][pypi-shield]][pypi-address]
-[![Python Versions][pypi-version-shield]][github-address]
-
 [![GitHub Release][releases-shield]][releases]
 [![License][license-shield]](LICENSE)
 
@@ -10,8 +7,9 @@
 [![GitHub Activity][commits-shield_m]][commits]
 [![GitHub Activity][commits-shield_w]][commits]
 
+[![PyPi][pypi-shield]][pypi-address]
+[![Python Versions][pypi-version-shield]][github-address]
 [![Validate][validate-shield]][validation]
-
 [![Build Status][pypi-publish-shield]][pypi-publish]
 
 
@@ -47,16 +45,16 @@ async def async_get_data():
 [commits-shield_w]: https://img.shields.io/github/commit-activity/w/NECH2004/zever_local?style=for-the-badge
 [commits]: https://github.com/NECH2004/zever_local/commits/dev
 
-[validate-shield]: https://github.com/NECH2004/zever_local/actions/workflows/verify.yml/badge.svg?branch=dev
+[validate-shield]: https://github.com/NECH2004/zever_local/actions/workflows/verify.yml/badge.svg
 [validation]: https://github.com/NECH2004/zever_local/actions/workflows/verify.yml
 
 [license-shield]:https://img.shields.io/github/license/nech2004/zever_local?style=for-the-badge
 [maintenance-shield]: https://img.shields.io/badge/maintainer-Christian%20Neumeier%20%40NECH2004?style=for-the-badge
 
-[pypi-shield]: https://img.shields.io/pypi/v/zever_local.svg?style=for-the-badge
+[pypi-shield]: https://img.shields.io/pypi/v/zever_local.svg
 [pypi-address]: https://pypi.python.org/pypi/zever_local/
-[pypi-version-shield]: https://img.shields.io/pypi/pyversions/zever_local.svg?style=for-the-badge
-[pypi-publish-shield]: https://github.com/NECH2004/zever_local/actions/workflows/python-publish.yml/badge.svg?style=for-the-badge
+[pypi-version-shield]: https://img.shields.io/pypi/pyversions/zever_local.svg
+[pypi-publish-shield]: https://github.com/NECH2004/zever_local/actions/workflows/python-publish.yml/badge.svg
 [pypi-publish]: https://github.com/NECH2004/zever_local/actions/workflows/publish.yaml
 
 [github-address]: https://github.com/NECH2004/zever_local/
