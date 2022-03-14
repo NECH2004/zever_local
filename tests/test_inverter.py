@@ -212,3 +212,24 @@ async def test_Inverter_power_on_ZeversolarTimeout():
 
             my_inverter = Inverter(url)
             await my_inverter.power_on()
+
+
+async def test_async_connect():
+    """Fetch the inverter info."""
+    url = ""
+    my_inverter = Inverter(url)
+
+    mock_response = httpx.Response(
+        200, request=httpx.Request("Get", f"https://{url}"), content=_byte_content
+    )
+
+    with patch("src.zever_local.inverter.httpx.AsyncClient.get") as mock_device_info:
+        mock_device_info.return_value = mock_response
+        await my_inverter.async_connect()
+
+        mac_address = my_inverter.mac_address
+        serial_number = my_inverter.serial_number
+
+        assert mac_address == "EA-B2-41-27-7A-36"
+        assert serial_number == _serial_number
+
